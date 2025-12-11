@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         LowEndTalk JIRA Theme (Optimized Compact)
-// @namespace    http://tampermonkey.net/
+// @name         LETJiraMode
+// @namespace    https://github.com/<your-username>/LETJiraMode
 // @version      1.0
-// @description  JIRA-style theme with early style injection; grayscale avatars except Frederic's in colour; visible profile counts; clickable JIRA logo
+// @description  JIRA-style theme for LowEndTalk
 // @match        https://lowendtalk.com/*
 // @grant        GM_addStyle
 // @run-at       document-start
@@ -88,6 +88,22 @@
     /* Profile counts: show all numbers */
     .FilterMenu .Count, .FilterMenu .Count .Number { color:#0052CC!important; font-weight:600!important; }
     .FilterMenu .Count { background:none!important; }
+
+    /* Rules dropdown fix: remove green background */
+    .dropdown ul { background:#0052CC!important; border:none!important; }
+    .dropdown ul li { background:#0052CC!important; }
+    .dropdown ul li a {
+      color:#fff!important;
+      display:block!important;
+      padding:6px 12px!important;
+      border-radius:4px!important;
+      font-weight:600!important;
+      text-decoration:none!important;
+    }
+    .dropdown ul li a:hover {
+      background:#0747A6!important;
+      color:#fff!important;
+    }
   `);
 
   /* Replace brand/title with "JIRA" and keep it clickable */
