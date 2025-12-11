@@ -2,7 +2,7 @@
 // @name         LETJiraMode
 // @namespace    https://github.com/<your-username>/LETJiraMode
 // @version      1.0
-// @description  JIRA-style theme for LowEndTalk
+// @description  JIRA-style theme for LowEndTalk (global green override)
 // @match        https://lowendtalk.com/*
 // @grant        GM_addStyle
 // @run-at       document-start
@@ -89,18 +89,18 @@
     .FilterMenu .Count, .FilterMenu .Count .Number { color:#0052CC!important; font-weight:600!important; }
     .FilterMenu .Count { background:none!important; }
 
-    /* Rules dropdown fix: remove green background */
-    .dropdown ul { background:#0052CC!important; border:none!important; }
-    .dropdown ul li { background:#0052CC!important; }
-    .dropdown ul li a {
+    /* Global green override: replace any green backgrounds with JIRA blue */
+    .dropdown ul, .dropdown ul li, .dropdown ul li a,
+    .Menu, .Menu li, .Menu li a,
+    .Tag.Tag-Rules, .Tag.Tag-Green,
+    [class*="Green"], [class*="green"] {
+      background:#0052CC!important;
       color:#fff!important;
-      display:block!important;
-      padding:6px 12px!important;
-      border-radius:4px!important;
-      font-weight:600!important;
-      text-decoration:none!important;
+      border:none!important;
     }
-    .dropdown ul li a:hover {
+    .dropdown ul li a:hover,
+    .Menu li a:hover,
+    [class*="Green"]:hover, [class*="green"]:hover {
       background:#0747A6!important;
       color:#fff!important;
     }
